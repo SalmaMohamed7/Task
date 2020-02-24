@@ -10,7 +10,7 @@ const ExtractJwt = passportJWT.ExtractJwt; //trial auth
 const JwtStrategy = passportJWT.Strategy;//trial auth
 
 
-//const educationalOrganizations = require('./routes/api/educationalOrganizations')
+const queries = require('./api/routes/query.router')
 
 
 const app = express()
@@ -59,7 +59,7 @@ app.get('/', (req, res) => {
 
 // Direct routes to appropriate files
 
-//app.use('/api/assessments', assessments)
+app.use('/api/routes', queries)
 
 //app.use('/api/educationalOrganizations', educationalOrganizations)
 
