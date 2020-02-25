@@ -14,8 +14,8 @@ const productController = require('../controllers/product.controller');
 // an example would be
 // api/v1/task/detailsInquiry
 // From now on, routes will only use controllers
-router.post('/viewp', productController.view_all_products)
-router.post('/viewpt', productController.view_product_by_type)
-router.post('/createp', productController.create_product)
+router.get('/view', productController.view_all_products)
+router.get('/view/product', productController.view_product_by_type)
+router.post('/create', productController.create_product)
 
 module.exports = router;

@@ -13,8 +13,11 @@ const ProductSchema = new Schema({
     //     type: [{type: Schema.Types.ObjectId, ref: 'masterclasses'}]
     // },
     time_range:{
-        type:[{start_date: {type: Date}},{end_date: {type: Date}}]
+        type:[{start_date: Date,end_date: Date}]
     }
+    // time_range:{
+    //     type:[{start_date: {type: Date}},{end_date: {type: Date}}]
+    // }
 
 })
 

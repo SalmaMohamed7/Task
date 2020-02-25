@@ -1,5 +1,6 @@
 const Product = require('../../models/Product')
 const Query = require('../../models/Query')
+const p = require('./product.controller')
 
 //const validate = require('../validations/course.validations')
 //router.use(express.json())
@@ -20,12 +21,15 @@ exports.create_query= async (req,res) => {
     try {
     // const isValidated = validator.createValidation(req.body)
      //if (isValidated.error) return res.status(400).send({ error: isValidated.error.details[0].message })
-        const { name} = req.body;
-		const query = await Query.findOne({ name }); //making sure email is unique
-		if (query) return res.status(400).json({ name: 'name already exists' });
+        const { name,product_type} = req.body;
+        console.log(product_type)
+		const query = await Query.findOne({ name }); 
+        if (query) return res.status(400).json({ name: 'name already exists' });
+        const products = await Product.find({product_type: product_type})
+     components = [products]
         const newQuery = new Query({
-            name
-            //components
+            name,
+            components
 			
 		});
     await Query.create(newQuery);

@@ -14,7 +14,7 @@ const queryController = require('../controllers/query.controller');
 // an example would be
 // api/v1/task/detailsInquiry
 // From now on, routes will only use controllers
-router.post('/view', queryController.view_all_queries)
+router.get('/view', queryController.view_all_queries)
 router.post('/create', queryController.create_query)
 
 module.exports = router;

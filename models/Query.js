@@ -10,8 +10,12 @@ const QuerySchema = new Schema({
         required: true
     },
     components: {
-        type: [{type: Schema.Types.ObjectId, ref: 'product'}]
+        type: [{ type : Array , "default" : [] }]
     }
+
+    // components: {
+    //     type: [{type: Schema.Types.ObjectId, ref: 'product'}]
+    // }
 
 })
 
