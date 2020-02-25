@@ -11,6 +11,8 @@ const JwtStrategy = passportJWT.Strategy;//trial auth
 
 
 const queries = require('./api/routes/query.router')
+const products = require('./api/routes/product.router')
+
 
 
 const app = express()
@@ -44,7 +46,7 @@ require('./config/passport')(passport)//login
 app.get('/', (req, res) => {
 
   res.send(`<h1>Welcome to LirtenHub</h1>
-  <a href="/api/courses">Courses</a>
+  <a href="/api/view">Courses</a>
   <a href="/api/workshops">Workshops</a>
   <a href="/api/members">members</a>
   <a href="/api/admins">admins</a>
@@ -59,7 +61,9 @@ app.get('/', (req, res) => {
 
 // Direct routes to appropriate files
 
-app.use('/api/routes', queries)
+app.use('/api', queries)
+app.use('/api', products)
+
 
 //app.use('/api/educationalOrganizations', educationalOrganizations)
 

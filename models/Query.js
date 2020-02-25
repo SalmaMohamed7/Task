@@ -11,8 +11,7 @@ const QuerySchema = new Schema({
     },
     components: {
         type: [{type: Schema.Types.ObjectId, ref: 'product'}]
-    },
-    
+    }
 
 })
 

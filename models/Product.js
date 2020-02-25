@@ -5,20 +5,16 @@ const Schema = mongoose.Schema
 const ProductSchema = new Schema({
  
    
-    name: {
+    product_type: {
         type: String,
         required: true
     },
     // masterClasses: {
     //     type: [{type: Schema.Types.ObjectId, ref: 'masterclasses'}]
     // },
-    timeRange:{
-        type:[{startDate: {type: Date}},{endDate: {type: Date}}]
+    time_range:{
+        type:[{start_date: {type: Date}},{end_date: {type: Date}}]
     }
-    // expirationDate:{
-    //     type: Date
-
-    // }
 
 })
 
