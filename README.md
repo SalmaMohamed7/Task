@@ -6,3 +6,5 @@ To run the front-end with the back end:
  Then open a new terminal and write cd client
  then npm start
 
+Dependencies:
+Mongoose, MongoDB, express, axios, node, react
