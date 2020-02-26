@@ -21,12 +21,15 @@ exports.create_query= async (req,res) => {
     try {
     // const isValidated = validator.createValidation(req.body)
      //if (isValidated.error) return res.status(400).send({ error: isValidated.error.details[0].message })
-        const { name,product_type} = req.body;
-        console.log(product_type)
-		const query = await Query.findOne({ name }); 
+        const { name,product_types} = req.body;
+      //  console.log(product_type)
+        const query = await Query.findOne({ name }); 
+        var components = []
         if (query) return res.status(400).json({ name: 'name already exists' });
-        const products = await Product.find({product_type: product_type})
-     components = [products]
+        for(i=0;i<product_types.length;i++){
+            const products = await Product.find({product_type: product_types[i]})
+            components.push(products)
+        }
         const newQuery = new Query({
             name,
             components
